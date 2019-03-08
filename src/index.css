@@ -24,6 +24,7 @@ input, button {
   margin: 0;
   vertical-align: top;
   outline-style: none;
+  cursor: pointer;
 }
 
 p {
@@ -35,4 +36,8 @@ p {
   background: #fff;
   z-index: 1;
   border-bottom: 1px solid #eaeaea;
+}
+
+img {
+  border-radius: 50%;
 }

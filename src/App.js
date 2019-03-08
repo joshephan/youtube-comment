@@ -22,7 +22,7 @@ class App extends Component {
  
   _renderComments = () => {
     const comments = this.state.comments.map((comment) => {
-      return <Comment title={comment.snippet.topLevelComment.snippet.authorDisplayName} text={comment.snippet.topLevelComment.snippet.textDisplay} key={comment.id}/>
+      return <Comment img={comment.snippet.topLevelComment.snippet.authorProfileImageUrl} title={comment.snippet.topLevelComment.snippet.authorDisplayName} text={comment.snippet.topLevelComment.snippet.textDisplay} key={comment.id}/>
     })
     return comments
   }
