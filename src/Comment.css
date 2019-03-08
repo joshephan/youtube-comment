@@ -1,5 +1,5 @@
 .Comments {
-    width: 600px;
+    max-width: 600px;
     padding: 15px;
     border: 1px solid #e7e7e7;
     border-radius: 6px;

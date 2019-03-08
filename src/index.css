@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  word-break: keep-all;
 }
 
 h1 {
@@ -21,7 +22,7 @@ input, button {
   border-radius: 6px;
   border: 1px solid #8c8c8c;
   background: transparent;
-  margin: 0;
+  margin: 7px 3px;
   vertical-align: top;
   outline-style: none;
   cursor: pointer;
