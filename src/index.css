@@ -31,15 +31,8 @@ p {
 }
 
 #fixed-top {
-  position: fixed;
-  top: 0;
   width: 100%;
   background: #fff;
   z-index: 1;
   border-bottom: 1px solid #eaeaea;
-}
-
-#root {
-  position: relative;
-  top: 180px;
 }
