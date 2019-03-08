@@ -3,6 +3,8 @@ import './App.css';
 import Comment from './Comment';
 import queryString from 'query-string';
 
+const APIKEY = "YOUR-YOUTUBE-API-KEY";
+
 class App extends Component {
   state = {}
 
@@ -45,7 +47,7 @@ class App extends Component {
   }
 
   _callApi = (videoId, nextPageToken) => {
-    let url = `https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyDmbe5tI3RmWjciK-es3eWGNQxfuw2b2-o&textFormat=plainText&part=snippet&videoId=${videoId}&maxResults=100`;
+    let url = `https://www.googleapis.com/youtube/v3/commentThreads?key=${APIKEY}&textFormat=plainText&part=snippet&videoId=${videoId}&maxResults=100`;
     return fetch(nextPageToken ? url + `&pageToken=${nextPageToken}` : url)
     .then(data=> data.json())
     .then(res => {
