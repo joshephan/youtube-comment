@@ -3,6 +3,7 @@ import './App.css';
 import Comment from './Comment';
 import queryString from 'query-string';
 
+// YOUR-YOUTUBE-API-KEY
 const APIKEY = "YOUR-YOUTUBE-API-KEY";
 
 class App extends Component {
@@ -24,7 +25,13 @@ class App extends Component {
  
   _renderComments = () => {
     const comments = this.state.comments.map((comment) => {
-      return <Comment img={comment.snippet.topLevelComment.snippet.authorProfileImageUrl} title={comment.snippet.topLevelComment.snippet.authorDisplayName} text={comment.snippet.topLevelComment.snippet.textDisplay} key={comment.id}/>
+      return <Comment 
+              key={comment.id} 
+              alt={comment.id}
+              img={comment.snippet.topLevelComment.snippet.authorProfileImageUrl} 
+              title={comment.snippet.topLevelComment.snippet.authorDisplayName} 
+              text={comment.snippet.topLevelComment.snippet.textDisplay} 
+              voting={comment.snippet.totalReplyCount}/>
     })
     return comments
   }
@@ -60,6 +67,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div id='fixed-top'>
+          <h1>유튜브 모든 댓글 가져오기</h1>
+          <div>
+              <input id='the-url' type='text' placeholder="링크 주소를 입력해주세요!"/>
+              <button id='get-it'>댓글 가져오기</button>
+          </div>
+          <p>유튜브 라이브는 댓글이 아닌 채팅이라 가져오지 못합니다!!<span role="img" aria-label="no">🙅</span>‍</p>
+          <p>특별한 문장을 검색하실 땐 <b>Ctrl + F</b>를 누른 후 검색할 문장을 적으면 됩니다.</p>
+        </div>
         {this.state.comments ? this._renderComments() : null}
       </div>
     );

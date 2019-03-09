@@ -16,3 +16,8 @@ h5 {
 .Comments p {
     margin: 0;
 }
+
+.voting {
+    font-size: 15px;
+    margin-top: 7px;
+}
