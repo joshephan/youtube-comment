@@ -15,7 +15,9 @@ class App extends Component {
       let url = document.getElementById('the-url').value;
       // 주소 입력 확인
       if(url) {
-        let videoId = queryString.parse(url)['https://www.youtube.com/watch?v'] || url.split('https://youtu.be/')[1]; // 일반적 유튜브 주소 또는 단축 주소
+        let videoId = queryString.parse(url)['https://www.youtube.com/watch?v'] ||
+                      queryString.parse(url)['https://m.youtube.com/watch?v'] || 
+                      url.split('https://youtu.be/')[1]; // 일반적 유튜브 주소 또는 단축 주소
         _this._getComments(videoId);
         return;
       }
